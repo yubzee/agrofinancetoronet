@@ -71,6 +71,6 @@ TRANSACTIONHASH 1 - 0x9ce0dc0fa0598cd085611182e3743501f5f9fa8256130adadf93e62073
 TRANSACTIONHASH 2 - 0xad747e63fb1fc3645792087dddc1b59d3ffe29c6677fbdd47a427eb9faaa2086 <br>
 
 ORIGINALITY – This is the original work by our team. <br>
--DEMO Link –  http://www.toronet.plutonics.online/index.html <br>
+-DEMO Link –  www.toronet.plutonics.online/index.html <br>
 -Video Link –  https://youtu.be/PgoPWwCSg44 <br>
 -Tweet Link -  https://x.com/yubzeela/status/1724811823931596878?s=20 <br>
