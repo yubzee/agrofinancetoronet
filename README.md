@@ -46,6 +46,8 @@ Key Features:
 11.	Transaction History and Reporting:
 •	Users can access a transparent and immutable transaction history on the blockchain.
 •	Reporting tools provide insights into loan performance, warehouse utilization, and overall system efficiency.
+
+
 Benefits:
 •	Efficiency: Streamlines the entire warehouse receipt financing process, reducing paperwork and processing time.
 •	Transparency: Utilizes blockchain for transparent and immutable transaction records, enhancing trust among stakeholders.
@@ -67,7 +69,7 @@ CONTRACT ADDRESS - 0x8017EBAbcB8746291De3076618741a2718D09489
 TRANSACTIONHASH 1 - 0x9ce0dc0fa0598cd085611182e3743501f5f9fa8256130adadf93e620734ae98c
 TRANSACTIONHASH 2 - 0xad747e63fb1fc3645792087dddc1b59d3ffe29c6677fbdd47a427eb9faaa2086
 
-ORIGINALITY – This is the original work by our team. We build on top of the REMIX IDE
+ORIGINALITY – This is the original work by our team.
 -DEMO Link –  http://www.toronet.plutonics.online/index.html
 -Video Link –  https://youtu.be/PgoPWwCSg44
 -Tweet Link -  https://x.com/yubzeela/status/1724811823931596878?s=20
