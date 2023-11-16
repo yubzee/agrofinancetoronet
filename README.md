@@ -51,26 +51,26 @@ Key Features:
 
 #### Benefits:
 •	Efficiency: Streamlines the entire warehouse receipt financing process, reducing paperwork and processing time. <br>
-•	Transparency: Utilizes blockchain for transparent and immutable transaction records, enhancing trust among stakeholders.
-•	Risk Mitigation: Implement robust approval workflows and default handling mechanisms to mitigate risks for financial institutions.
-•	Financial Inclusion: Enables farmers to access financing based on the value of their stored commodities, promoting financial inclusion in agriculture.
-•	Quality Assurance: Commodities inspectors ensure the quality and quantity of stored commodities, reducing the risk of fraudulent activities.
-Future Enhancements:
-•	Mobile App: Develop a mobile application for easy access and on-the-go transactions.
-•	Smart Contracts: Explore further automation using smart contracts for specific processes, reducing the need for manual intervention.
-•	Integration with Supply Chain: Extend the platform to integrate with the broader agricultural supply chain for end-to-end visibility.
+•	Transparency: Utilizes blockchain for transparent and immutable transaction records, enhancing trust among stakeholders. <br>
+•	Risk Mitigation: Implement robust approval workflows and default handling mechanisms to mitigate risks for financial institutions. <br>
+•	Financial Inclusion: Enables farmers to access financing based on the value of their stored commodities, promoting financial inclusion in agriculture. <br>
+•	Quality Assurance: Commodities inspectors ensure the quality and quantity of stored commodities, reducing the risk of fraudulent activities. <br>
+### Future Enhancements:
+•	Mobile App: Develop a mobile application for easy access and on-the-go transactions. <br>
+•	Smart Contracts: Explore further automation using smart contracts for specific processes, reducing the need for manual intervention. <br>
+•	Integration with Supply Chain: Extend the platform to integrate with the broader agricultural supply chain for end-to-end visibility. <br>
 
 
 
 
 
 
-NETWORK – TESTNET
-CONTRACT ADDRESS - 0x8017EBAbcB8746291De3076618741a2718D09489
-TRANSACTIONHASH 1 - 0x9ce0dc0fa0598cd085611182e3743501f5f9fa8256130adadf93e620734ae98c
-TRANSACTIONHASH 2 - 0xad747e63fb1fc3645792087dddc1b59d3ffe29c6677fbdd47a427eb9faaa2086
+NETWORK – TESTNET <br>
+CONTRACT ADDRESS - 0x8017EBAbcB8746291De3076618741a2718D09489 <br>
+TRANSACTIONHASH 1 - 0x9ce0dc0fa0598cd085611182e3743501f5f9fa8256130adadf93e620734ae98c <br>
+TRANSACTIONHASH 2 - 0xad747e63fb1fc3645792087dddc1b59d3ffe29c6677fbdd47a427eb9faaa2086 <br>
 
-ORIGINALITY – This is the original work by our team.
--DEMO Link –  http://www.toronet.plutonics.online/index.html
--Video Link –  https://youtu.be/PgoPWwCSg44
--Tweet Link -  https://x.com/yubzeela/status/1724811823931596878?s=20
+ORIGINALITY – This is the original work by our team. <br>
+-DEMO Link –  http://www.toronet.plutonics.online/index.html <br>
+-Video Link –  https://youtu.be/PgoPWwCSg44 <br>
+-Tweet Link -  https://x.com/yubzeela/status/1724811823931596878?s=20 <br>
