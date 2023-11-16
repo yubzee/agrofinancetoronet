@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AgroFinance - Warehouse Receipt Financing">
+
+    <!-- ========== Page Title ========== -->
+    <title>AgroFinance - Warehouse Receipt Financing</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="assets/img/agrofav.png" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/themify-icons.css" rel="stylesheet" />
+    <link href="assets/css/flaticon-set.css" rel="stylesheet" />
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/bootsnav.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+			font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 2px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"></script>
+    <title>Warehouse Receipt Financing App</title>
+</head>
+<body>
+
+	<header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default  dark no-background bootsnav">
+
+            <!-- Start Top Search -->
+            <div class="container-full">
+                <div class="row">
+                    <div class="top-search">
+                        <div class="input-group">
+                            <form action="#">
+                                <input type="text" name="text" class="form-control" placeholder="Search">
+                                <button type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>  
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
+            <div class="container-full">
+
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav inc-border">
+                    <ul>
+                        <li class="search"><a href="#"><i class="ti-search"></i></a></li>
+                        <li class="side-menu"><a href="#"><i class="ti-menu-alt"></i></a></li>
+                    </ul>
+                </div>        
+                <!-- End Atribute Navigation -->
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/agrologo.png" style="width: 270px;" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="smooth-menu">
+                            <a  class="smooth-menu" href="index.html" >Home</a>
+                        
+                        </li>
+                       
+                        <li>
+                            <a class="smooth-menu" href="#">About</a>
+                        </li>
+                      
+                        <li>
+                            <a class="smooth-menu" href="#">Team</a>
+                        </li>
+                        <li>
+                            <a class="smooth-menu" href="#">Blog</a>
+                        </li>
+                        <li>
+                            <div class="bottom" style="padding: 30px;">
+                                <a class="smooth-menu btn btn-theme" href="#">Register Warehouse</a>
+                       
+                            </div>
+                           
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+          
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+
+	<section>
+
+	<div class="banner-area shape center-item text-color" style="padding-top: 10px;">
+		<h3>Fill in the form to Register Warehouse</h3>
+        <div class="item">
+            <div class="container">
+                <div class="row align-center">
+				
+					<label for="owner">Warehouse Wallet Address:</label>
+					<input type="text" id="owner" placeholder="Enter wallet address">
+				
+					<label for="warehouseName">Warehouse Name:</label>
+					<input type="text" id="warehouseName" placeholder="Enter warehouse name">
+				
+					<label for="warehouseRegion">Warehouse Region:</label>
+					<input type="text" id="warehouseRegion" placeholder="Enter warehouse region">
+				
+					<label for="warehouseAddress">Warehouse Address:</label>
+					<input type="text" id="warehouseAddress" placeholder="Enter warehouse address">
+				
+					<label for="warehousePhone">Warehouse Phone:</label>
+					<input type="text" id="warehousePhone" placeholder="Enter warehouse phone">
+				
+					<button onclick="registerWarehouse()">Register Warehouse</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+  
+
+    <script>
+        // Replace the following with your contract address and ABI
+        const contractAddress = '0x8017EBAbcB8746291De3076618741a2718D09489';
+        const contractABI = [
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_farmer",
+				"type": "address"
+			}
+		],
+		"name": "approveFarmerRegistration",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "ciOwner",
+				"type": "address"
+			}
+		],
+		"name": "CommoditiesInspectorRegistered",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_receiptId",
+				"type": "uint256"
+			}
+		],
+		"name": "declareDefaultedLoan",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "receiptId",
+				"type": "uint256"
+			}
+		],
+		"name": "DefaultedLoan",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "farmer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "receiptId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "quantity",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "storageFee",
+				"type": "uint256"
+			}
+		],
+		"name": "Deposit",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_quantity",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_storageFee",
+				"type": "uint256"
+			}
+		],
+		"name": "depositCommodities",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "farmer",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "FarmerApproval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "farmer",
+				"type": "address"
+			}
+		],
+		"name": "FarmerRegistered",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "fiOwner",
+				"type": "address"
+			}
+		],
+		"name": "FinancialInstitutionRegistered",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_receiptId",
+				"type": "uint256"
+			}
+		],
+		"name": "inspectWarehouse",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "receiptId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "InsuranceClaimProcessed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "icOwner",
+				"type": "address"
+			}
+		],
+		"name": "InsuranceCompanyRegistered",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "receiptId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "loanAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "interestRate",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "repaymentDate",
+				"type": "uint256"
+			}
+		],
+		"name": "LoanApproval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "receiptId",
+				"type": "uint256"
+			}
+		],
+		"name": "LoanRepayment",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_receiptId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_approved",
+				"type": "bool"
+			}
+		],
+		"name": "processInsuranceClaim",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_inspectorAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_inspectorName",
+				"type": "string"
+			}
+		],
+		"name": "registerCommoditiesInspector",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_farmerName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_farmerAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_farmerPhone",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_farmerBVN",
+				"type": "string"
+			}
+		],
+		"name": "registerFarmer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_bankAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_bankName",
+				"type": "string"
+			}
+		],
+		"name": "registerFinancialInstitution",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_insuranceAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_insuranceName",
+				"type": "string"
+			}
+		],
+		"name": "registerInsuranceCompany",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_warehouseOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_warehouseName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_warehouseRegion",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_warehouseAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_warehousePhone",
+				"type": "string"
+			}
+		],
+		"name": "registerWarehouse",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_receiptId",
+				"type": "uint256"
+			}
+		],
+		"name": "repayLoan",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_receiptId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_financialInstitution",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_loanAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_interestRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_repaymentDate",
+				"type": "uint256"
+			}
+		],
+		"name": "requestLoan",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_receiptId",
+				"type": "uint256"
+			}
+		],
+		"name": "validateWarehouseReceipt",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "warehouseOwner",
+				"type": "address"
+			}
+		],
+		"name": "WarehouseRegistered",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "admin",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "commoditiesInspectors",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "commodityInspectorName",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "isRegistered",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "farmers",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "farmerName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "farmerAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "farmerPhone",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "farmerBVN",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "isRegistered",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "isApproved",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "balance",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "financialInstitutions",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "bankName",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "isRegistered",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_receiptId",
+				"type": "uint256"
+			}
+		],
+		"name": "getWarehouseReceipt",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "quantity",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "storageFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "loanAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "interestRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "repaymentDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "farmer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "warehouse",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "financialInstitution",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "inspector",
+						"type": "address"
+					},
+					{
+						"internalType": "enum WarehouseReceipt.ApprovalStatus",
+						"name": "farmerApprovalStatus",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum WarehouseReceipt.ApprovalStatus",
+						"name": "inspectorApprovalStatus",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum WarehouseReceipt.ApprovalStatus",
+						"name": "financialInstitutionApprovalStatus",
+						"type": "uint8"
+					}
+				],
+				"internalType": "struct WarehouseReceipt.Receipt",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "insuranceCompanies",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "insuranceName",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "isRegistered",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "nextReceiptId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "receipts",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "quantity",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "storageFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "loanAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "interestRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "repaymentDate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "farmer",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "warehouse",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "financialInstitution",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "inspector",
+				"type": "address"
+			},
+			{
+				"internalType": "enum WarehouseReceipt.ApprovalStatus",
+				"name": "farmerApprovalStatus",
+				"type": "uint8"
+			},
+			{
+				"internalType": "enum WarehouseReceipt.ApprovalStatus",
+				"name": "inspectorApprovalStatus",
+				"type": "uint8"
+			},
+			{
+				"internalType": "enum WarehouseReceipt.ApprovalStatus",
+				"name": "financialInstitutionApprovalStatus",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "warehouses",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "wareHouseName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "wareHouseRegion",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "wareHouseAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "wareHousePhone",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "isRegistered",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]; // Copy the ABI from the compiled smart contract
+
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+        async function registerWarehouse() {
+            try {
+                // Get the values from the textboxes
+                const owner = document.getElementById('owner').value;
+                const warehouseName = document.getElementById('warehouseName').value;
+                const warehouseRegion = document.getElementById('warehouseRegion').value;
+                const warehouseAddress = document.getElementById('warehouseAddress').value;
+                const warehousePhone = document.getElementById('warehousePhone').value;
+
+                // Call the registerWarehouse function
+                const transaction = await contract.registerWarehouse(owner, warehouseName, warehouseRegion, warehouseAddress, warehousePhone);
+                await transaction.wait();
+                alert('Warehouse registered successfully!');
+            } catch (error) {
+                console.error('Error registering warehouse:', error);
+                alert('Error registering warehouse. Check console for details.');
+            }
+        }
+
+        // Implement other functions similarly
+
+    </script>
+
+
+
+
+<script src="assets/js/jquery-1.12.4.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/equal-height.min.js"></script>
+<script src="assets/js/jquery.appear.js"></script>
+<script src="assets/js/jquery.easing.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/modernizr.custom.13711.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/progress-bar.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="assets/js/count-to.js"></script>
+<script src="assets/js/YTPlayer.min.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/bootsnav.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+</body>
+</html>
+
+
