@@ -1,4 +1,5 @@
-Application Name: AgroFinance
+Application Name: AgroFinance  
+
 Overview: AgroFinance is a digital platform that connects farmers, warehouses, financial institutions,commodities inspectors, insurance companies and the government to streamline and secure the process of warehouse receipt financing. The application leverages blockchain technology for transparency, security, and efficiency.
 
 Stakeholders Involved
