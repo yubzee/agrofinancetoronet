@@ -50,7 +50,7 @@ Key Features:
 
 
 #### Benefits:
-•	Efficiency: Streamlines the entire warehouse receipt financing process, reducing paperwork and processing time.
+•	Efficiency: Streamlines the entire warehouse receipt financing process, reducing paperwork and processing time. <br>
 •	Transparency: Utilizes blockchain for transparent and immutable transaction records, enhancing trust among stakeholders.
 •	Risk Mitigation: Implement robust approval workflows and default handling mechanisms to mitigate risks for financial institutions.
 •	Financial Inclusion: Enables farmers to access financing based on the value of their stored commodities, promoting financial inclusion in agriculture.
