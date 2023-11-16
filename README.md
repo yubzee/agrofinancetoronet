@@ -49,7 +49,7 @@ Key Features:
 •	Reporting tools provide insights into loan performance, warehouse utilization, and overall system efficiency.
 
 
-Benefits:
+#### Benefits:
 •	Efficiency: Streamlines the entire warehouse receipt financing process, reducing paperwork and processing time.
 •	Transparency: Utilizes blockchain for transparent and immutable transaction records, enhancing trust among stakeholders.
 •	Risk Mitigation: Implement robust approval workflows and default handling mechanisms to mitigate risks for financial institutions.
